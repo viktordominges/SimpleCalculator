@@ -1,5 +1,6 @@
 .container {
     width: 600px;
+    height: fit-content;
     /* border: 1px solid #000; */
     margin: 0 auto;
     background-color: #f0f0f0;
@@ -7,6 +8,9 @@
 
 h1 {
     text-align: center;
+    text-transform: uppercase;
+    font-size: 28px;
+    color: #37393b;
 }
 
 .calc__field {
@@ -31,6 +35,14 @@ input {
     font-size: 24px;
     padding: 10px 15px;
     width: 100%;
+    border-radius: 5px;
+    pointer-events: none;
+}
+
+#result_field {
+    color: #686a6c;
+    border: none;
+    font-size: 20px;
 }
 
 .calc__buttons {

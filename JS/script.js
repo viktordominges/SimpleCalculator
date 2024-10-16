@@ -14,7 +14,8 @@ window.addEventListener('DOMContentLoaded', () => {
                 resultField.value = '';
                 lastInput = ''; // Сброс последнего ввода
             } else if (value === 'go_back') {
-                inputField.value = inputField.value.slice(0, -1); // Удаляем последний символ
+                inputField.value = inputField.value.slice(0, -1);
+                resultField.value = resultField.value.slice(0, -1); // Удаляем последний символ
                 lastInput = inputField.value.slice(-1); // Обновляем последний введённый символ
             } else if (value === '=') {
                 calculateResult();
@@ -45,12 +46,12 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 
     function isOperator(char) {
-        return ['+', '-', '*', '/', '%'].includes(char); // Проверяем, является ли символ оператором
+        return ['+', '-', '*', '/'].includes(char); // Проверяем, является ли символ оператором
     }
 
     // Получаем последнее введённое число (после последнего оператора)
     function getLastNumber(input) {
-        const operators = ['+', '-', '*', '/', '%'];
+        const operators = ['+', '-', '*', '/'];
         const parts = input.split(new RegExp(`[\\${operators.join('\\')}]`));
         return parts[parts.length - 1]; // Возвращаем последнюю часть, которая является числом
     }
@@ -74,7 +75,7 @@ window.addEventListener('DOMContentLoaded', () => {
     function calculateResult() {
         try {
             const expression = inputField.value.replace(/,/g, '.'); // Замена всех запятых на точки
-            if (isOperator(expression.slice(-1)) || expression.slice(-1) === '.' || expression.slice(-1) === ',') return; // Не вычисляем, если выражение заканчивается оператором или запятой
+            if (isOperator(expression.slice(-1)) || expression.slice(-1) === '.' || expression.slice(-1) === ',' || expression.slice(-1) === '') return; // Не вычисляем, если выражение заканчивается оператором или запятой
 
             let result = eval(expression); // Вычисляем выражение
             if (!isFinite(result)) {

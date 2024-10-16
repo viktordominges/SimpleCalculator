@@ -1,7 +1,8 @@
 .container {
     width: 600px;
-    border: 1px solid #000;
+    /* border: 1px solid #000; */
     margin: 0 auto;
+    background-color: #f0f0f0;
 }
 
 h1 {
@@ -41,12 +42,20 @@ input {
 }
 
 .calc__buttons-item {
-    background-color: #ccc;
     padding: 20px;
     text-align: center;
-    border: 1px solid #000;
     font-size: 24px;
     cursor: pointer;
+    color: white;
+    background-color: #686a6c;
+    border: none;
+    border-radius: 5px;
+    transition: transform 0.1s, background-color 0.1s;
+}
+
+.calc__buttons-item:active {
+    transform: scale(0.95); /* Эффект уменьшения кнопки */
+    background-color: #37393b; /* Более темный цвет при нажатии */
 }
 
 .a {

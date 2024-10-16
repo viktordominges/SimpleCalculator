@@ -63,12 +63,12 @@ window.addEventListener('DOMContentLoaded', () => {
 
             let result = eval(expression); // Вычисляем выражение
             if (!isFinite(result)) { // Проверяем деление на ноль
-                resultField.value = 'запрещенное действие';
+                resultField.value = 'Prohibited action';
             } else {
                 resultField.value = parseFloat(result.toFixed(10)); // Округляем результат до 10 знаков после запятой
             }
         } catch (error) {
-            resultField.value = 'Ошибка';
+            resultField.value = 'Error';
         }
     }
 
@@ -79,13 +79,13 @@ window.addEventListener('DOMContentLoaded', () => {
 
             let result = eval(expression); // Вычисляем выражение
             if (!isFinite(result)) {
-                resultField.value = 'запрещенное действие';
+                resultField.value = 'Prohibited action';
             } else {
                 inputField.value = parseFloat(result.toFixed(10)); // Переносим результат в верхнее поле и округляем до 10 знаков
                 resultField.value = ''; // Очищаем нижнее поле
             }
         } catch (error) {
-            resultField.value = 'Ошибка';
+            resultField.value = 'Error';
         }
     }
 });

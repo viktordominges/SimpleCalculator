@@ -1,0 +1,50 @@
+.container {
+    width: 600px;
+    border: 1px solid #000;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+.calc__field {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.calc__input {
+    margin: 30px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Выравнивание по горизонтали */
+    align-items: center;     /* Выравнивание по вертикали */
+    height: 50px;
+    width: 500px;
+}
+
+input {
+    margin-top: 20px;
+    text-align: end;
+    font-size: 24px;
+    padding: 10px 15px;
+    width: 100%;
+}
+
+.calc__buttons {
+    margin: 50px 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 колонки одинаковой ширины */
+    grid-template-rows: repeat(5, auto);   /* 5 строк автоматически по содержимому */
+    gap: 15px;
+}
+
+.calc__buttons-item {
+    background-color: #ccc;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #000;
+    font-size: 24px;
+    cursor: pointer;
+}
